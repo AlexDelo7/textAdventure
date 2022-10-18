@@ -11,7 +11,7 @@ public class TextAdventure
     console = new FancyConsole("Great Text Adventure!", 600, 600);
     inScanner = new Scanner(System.in);
 
-    ourHero = new Player("Bob", 100, 10);
+    ourHero = new Player("Bob", 100, 10,1);
   }
 
   public void play()
@@ -109,6 +109,7 @@ public class TextAdventure
   {
     console.setImage("forest.jpg");
 
+
     
   }
 
@@ -120,30 +121,57 @@ public class TextAdventure
 
   private void enterZone4()
   {
-    // change image
-    // ADD CODE HERE
-
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
-
-    // Take action or go to another zone based on their choice
-    // ADD CODE HERE
+    System.out.println("You enter the graveyard "); 
     
   }
 
   private void enterZone5()
   {
-    // change image
-    // ADD CODE HERE
+   System.out.println("welcome to my blacksmith shop would you like something\naxe +10 strength - 10 gold\nsword +5 strength -5 gold\nspear +20 strength - 50 gold\ncity:Go back to city");
+  String item = "";
+   while((!(item.equals("city"))))
+   {
+     System.out.println("what would you like to do?");
+    item = inScanner.nextLine();
+    item = item.toLowerCase();
+   if(item.equals("axe")){
+    if(ourHero.gold>=10){
+   ourHero.strength=ourHero.strength+10;
+   ourHero.gold=ourHero.gold - 10;
+    }else{
+      System.out.print("You dont have enough money");
+      System.out.println("your gold");
+         System.out.println(ourHero.gold);
+    }
 
-    // describe the area/situation to the user. 
-    // Give them options for choices.
-    // ADD CODE HERE
+   }else if(item.equals("sword")){
+    if(ourHero.gold>=5){
+      ourHero.strength=ourHero.strength+5;
+      ourHero.gold=ourHero.gold - 5;
+       }else{
+         System.out.print("You dont have enough money");
+         System.out.println("your gold");
+         System.out.println(ourHero.gold);
+       }
 
-    // Take action or go to another zone based on their choice
-    // ADD CODE HERE
-    
+   }else if(item.equals("spear")){
+    if(ourHero.gold>=50){
+      ourHero.strength=ourHero.strength+20;
+      ourHero.gold=ourHero.gold - 50;
+       }else{
+         System.out.print("You dont have enough money");
+         System.out.println("your gold");
+         System.out.println(ourHero.gold);
+       }
+   }else if(item.equals("city")){
+    enterZone1();
+
+  }else{
+     System.out.println("You seem confused ");
+
+   }
+
+   }
   }
 
   private void enterZone6()

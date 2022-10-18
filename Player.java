@@ -5,13 +5,15 @@ public class Player
   String name;
   int health;
   double gold;
+  int strength;
   int monstersDefeated;
 
-  public Player(String playerName, int startingHealth, double startingGold)
+  public Player(String playerName, int startingHealth, double startingGold,int startStrength)
   {
     startingHealth= health;
     startingGold = gold;
     playerName=name;
+    startStrength=strength;
 
   }
 
