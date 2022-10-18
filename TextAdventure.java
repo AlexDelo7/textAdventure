@@ -28,18 +28,19 @@ public class TextAdventure
     boolean dark = false;
     while((!(location.equals("mountains")) && (!(location.equals("city"))) && (!(location.equals("forest")))))
     {
+      System.out.println("what would you like to do?");
      location = inScanner.nextLine();
      location = location.toLowerCase();
-    if(location == "city"){
+    if(location.equals("city")){
     enterZone1();
 
-    }else if(location == "forest"){
+    }else if(location.equals("forest")){
     enterZone2();
 
-    }else if(location == "mountains"){
+    }else if(location.equals("mountains")){
       enterZone3();
 
-    }else if(location == "look"){
+    }else if(location.equals("look")){
       if(dark == true){
         System.out.println("Its too dark to see anything interesting");
       }else{
@@ -47,12 +48,12 @@ public class TextAdventure
 
       }
 
-    }else if(location == "nap"){
+    }else if((location.equals("nap"))){
       System.out.println("You go back to sleep for a little while it is now night");
       dark = true;
 
     }else{
-      System.out.println("You seem confused what would you like to do?");
+      System.out.println("You seem confused ");
 
     }
 
@@ -67,22 +68,21 @@ public class TextAdventure
     console.setImage("distantcity.jpg");
     System.out.println("You enter the city and you see several things to do\ngraveyard:go to graveyard\nblacksmith:enter blacksmith\nwalk:keep walking");
     int counter=0;
-    while(l1 !="graveyard"||l1!="blacksmith")
+    while((!(l1.equals("blacksmith")) && (!(l1.equals("graveyard")))))
     {
-      System.out.println("What would you like to do?");
-
+      System.out.println("what would you like to do?");
      l1 = inScanner.nextLine();
      l1 = l1.toLowerCase();
-    if(l1 == "graveyard"){
+    if(l1.equals("graveyard")){
     enterZone4();
 
-    }else if(l1 == "blacksmith"){
+    }else if(l1.equals("blacksmith")){
     enterZone5();
 
-    }else if(l1 == "walk"){
+    }else if(l1.equals("walk")){
+      counter++;
       if(counter<=3){
       System.out.println("you walk further into the city and dont see much of intrest");
-      counter++;
       }else if(counter<5){
         System.out.println("you keep walking further into the city but you countinue to find nothing of intrest");
 
@@ -94,9 +94,8 @@ public class TextAdventure
         ourHero.health=0;
 
       }
-
     }else{
-      System.out.println("You seem confused what would you like to do?");
+      System.out.println("You seem confused");
 
     }
 
