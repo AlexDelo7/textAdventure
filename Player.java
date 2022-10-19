@@ -3,9 +3,9 @@ import java.util.*;
 public class Player
 {
   String name;
-  int health;
-  double gold;
-  int strength;
+  int health=100;
+  double gold=10;
+  int strength=2;
   int monstersDefeated;
 
   public Player(String playerName, int startingHealth, double startingGold,int startStrength)
